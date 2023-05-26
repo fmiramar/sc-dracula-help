@@ -1,0 +1,72 @@
+textarea.editor {
+    opacity: 0;
+}
+
+.CodeMirror {
+    height: auto;
+    padding: 0 1em;
+    margin-top: 1em;
+    border-left: 2px solid #44475a;
+    font-size: 1em;
+    line-height: normal;
+    background: #282a36;
+}
+
+.CodeMirror-cursors,
+.CodeMirror pre {
+    z-index: 1 !important;
+}
+
+.CodeMirror-selected,
+.CodeMirror-line::selection,
+.CodeMirror-line > span::selection,
+.CodeMirror-line > span > span::selection { 
+    /* background: rgba(248, 162, 0, 0.5) !important; */
+    background: rgba(68, 71, 90, 0.5) !important;
+}
+
+@keyframes text-flash {
+    0% { 
+        background: rgba(248, 162, 0, 0);
+        color: black;
+    }
+    40% { 
+        background: rgba(248, 162, 0, 1); 
+        color: black,
+    }
+    100% { 
+        background: rgba(248, 162, 0, 0); 
+        color: black;
+    }
+}
+
+.CodeMirror .text-flash {
+    animation: text-flash .35s ease-in;
+}
+
+/* syntax hightlighting */
+.cm-s-default .cm-keyword { color: #ff76c7; font-weight: bold; }
+.cm-s-default .cm-built-in { color: #e2e37a; }
+.cm-s-default .cm-number { color: #be90fc; }
+.cm-s-default .cm-symbol { color: #be90fc; }
+.cm-s-default .cm-class { color: #65e5ff; }
+.cm-s-default .cm-primitive { color: #65e5ff; }
+.cm-s-default .cm-char { color: #ff55ff; }
+.cm-s-default .cm-env-var { color: #ffb965; }
+.cm-s-default .cm-comment { color: #6071a6; }
+.cm-s-default .cm-string { color: #5df884; }
+.cm-s-default .cm-text { color: #f7fdff; }
+
+@media print {
+    .cm-s-default .cm-keyword { color: #ff76c7; font-weight: bold; }
+    .cm-s-default .cm-built-in { color: #e2e37a; font-weight: bold; }
+    .cm-s-default .cm-number { color: #be90fc; }
+    .cm-s-default .cm-symbol { color: #65e5ff; font-weight: bold; }
+    .cm-s-default .cm-primitive { color:#be90fc; }
+    .cm-s-default .cm-class { color:  #65e5ff; }
+    .cm-s-default .cm-char { color: #ff55ff; }
+    .cm-s-default .cm-env-var { color: #ffb965; }
+    .cm-s-default .cm-comment { color: #6071a6; font-style: italic; }
+    .cm-s-default .cm-string { color: #5df884; }
+    .cm-s-default .cm-text { color: #f7fdff; }
+}
